@@ -26,6 +26,10 @@ I am a PhD Candidate at the [Centre for Vision, Speech and Signal Processing (CV
 ## News
 
 <div class="news-item">
+  <span class="news-date">Feb 2026</span>
+  <span>Selected as one of two recipients of the <strong>Rabin Ezra Scholarship</strong>.</span>
+</div>
+<div class="news-item">
   <span class="news-date">Oct 2025</span>
   <span>Journal paper published in <strong>CVIU</strong>: Unbiased evaluation of gloss-free sign language translation.</span>
 </div>
