@@ -27,19 +27,19 @@ I am a PhD Candidate at the [Centre for Vision, Speech and Signal Processing (CV
 
 <div class="news-item">
   <span class="news-date">Oct 2025</span>
-  <span>Best Paper Award at <strong>ICCV Workshop 2025</strong>: SAGE: Token-efficient gloss-free sign language translation.</span>
-</div>
-<div class="news-item">
-  <span class="news-date">May 2025</span>
-  <span>Paper accepted at <strong>IEEE FG 2025</strong>: Hands-on sign segmentation from continuous sequences.</span>
-</div>
-<div class="news-item">
-  <span class="news-date">Apr 2025</span>
   <span>Journal paper published in <strong>CVIU</strong>: Unbiased evaluation of gloss-free sign language translation.</span>
 </div>
 <div class="news-item">
-  <span class="news-date">Mar 2025</span>
-  <span>Paper accepted at <strong>ACM IUI 2025</strong>: Sign spotting disambiguation using LLMs.</span>
+  <span class="news-date">Sep 2025</span>
+  <span>Paper accepted at <strong>ACM IVA 2025</strong>: Sign spotting disambiguation using LLMs.</span>
+</div>
+<div class="news-item">
+  <span class="news-date">Jul 2025</span>
+  <span>Best Paper Award at <strong>ICCV Workshop 2025</strong>: SAGE — token-efficient gloss-free sign language translation.</span>
+</div>
+<div class="news-item">
+  <span class="news-date">Jun 2025</span>
+  <span>Paper accepted at <strong>IEEE FG 2025</strong>: Hands-on sign segmentation from continuous sequences.</span>
 </div>
 
 ---
