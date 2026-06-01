@@ -39,3 +39,45 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+
+/* ============================================================
+   Custom overrides: Modern Minimal
+   ============================================================ */
+
+/* Masthead */
+.masthead { border-bottom: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.greedy-nav a { font-weight: 500; font-size: 0.9rem; letter-spacing: 0.01em; transition: color 0.2s ease; }
+
+/* Author sidebar */
+.author__name { font-weight: 700; font-size: 1.1rem; color: #1e293b; }
+.author__bio { font-size: 0.85rem; color: #475569; line-height: 1.6; }
+.author__avatar img { border: 2px solid #e2e8f0; padding: 3px; }
+
+/* Research interest tags (used in about.md) */
+.research-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 1.5rem; padding: 0; list-style: none; }
+.research-tags li { display: inline-block; padding: 0.25rem 0.75rem; background: #ede9fe; color: #4F46E5; border-radius: 9999px; font-size: 0.8rem; font-weight: 500; line-height: 1.6; }
+
+/* Publication venue badges */
+.pub-badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; margin-right: 0.4rem; vertical-align: middle; line-height: 1.6; }
+.pub-badge--top     { background: #4F46E5; color: #fff; }
+.pub-badge--journal { background: #059669; color: #fff; }
+.pub-badge--arxiv   { background: #d97706; color: #fff; }
+
+/* Publication list */
+.archive__item { border-bottom: 1px solid #f1f5f9; padding-bottom: 1.2rem; margin-bottom: 1.2rem; }
+.archive__item-title { font-size: 1rem; font-weight: 600; line-height: 1.4; margin-top: 0.25rem; }
+.archive__item-title a { color: #1e293b; text-decoration: none; }
+.archive__item-title a:hover { color: #4F46E5; }
+.archive__item-excerpt { color: #475569; font-size: 0.875rem; line-height: 1.6; }
+
+/* Section headings */
+.page__title { font-weight: 700; color: #1e293b; }
+h2.archive__subtitle { font-size: 1rem; font-weight: 600; color: #4F46E5; text-transform: uppercase; letter-spacing: 0.06em; border-bottom: 2px solid #4F46E5; padding-bottom: 0.3rem; }
+
+/* In-content links */
+.page__content a { color: #4F46E5; text-decoration: none; border-bottom: 1px solid #c7d2fe; transition: border-color 0.2s ease, color 0.2s ease; }
+.page__content a:hover { color: #3730a3; border-bottom-color: #4F46E5; }
+
+/* News section (about.md) */
+.news-item { display: flex; gap: 1rem; margin-bottom: 0.75rem; font-size: 0.9rem; line-height: 1.5; }
+.news-date { flex-shrink: 0; color: #64748b; font-weight: 500; min-width: 6rem; }
