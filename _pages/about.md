@@ -14,12 +14,11 @@ I am a PhD Candidate at the [Centre for Vision, Speech and Signal Processing (CV
 **Research Interests**
 
 <ul class="research-tags">
-  <li>Sign Language Recognition</li>
+  <li>Video Understanding</li>
+  <li>Human Motion Generation</li>
   <li>Sign Language Translation</li>
   <li>Sign Language Production</li>
   <li>Large Language Models</li>
-  <li>Video Understanding</li>
-  <li>Temporal Segmentation</li>
 </ul>
 
 ---
@@ -28,7 +27,7 @@ I am a PhD Candidate at the [Centre for Vision, Speech and Signal Processing (CV
 
 <div class="news-item">
   <span class="news-date">Oct 2025</span>
-  <span>Paper accepted at <strong>ICCV 2025</strong>: SAGE — token-efficient gloss-free sign language translation.</span>
+  <span>Best Paper Award at <strong>ICCV Workshop 2025</strong>: SAGE: Token-efficient gloss-free sign language translation.</span>
 </div>
 <div class="news-item">
   <span class="news-date">May 2025</span>
@@ -47,13 +46,13 @@ I am a PhD Candidate at the [Centre for Vision, Speech and Signal Processing (CV
 
 ## Selected Publications
 
-**[ICCV 2025]** [SAGE: Segment-Aware Gloss-Free Encoding for Token-Efficient Sign Language Translation](/publication/2025-sage-sign-translation)  
+**[ICCV Workshop 2025 — Best Paper]** SAGE: Segment-Aware Gloss-Free Encoding for Token-Efficient Sign Language Translation  
 *JH Low, OM Sincan, R Bowden*
 
-**[FG 2025]** [Hands-on: Segmenting Individual Signs from Continuous Sequences](/publication/2025-hands-on-sign-segmentation)  
-*LJ He, H Walsh, OM Sincan, R Bowden*
+**[FG 2025]** Hands-on: Segmenting Individual Signs from Continuous Sequences  
+*JH Low, H Walsh, OM Sincan, R Bowden*
 
-**[CVIU 2025]** [Gloss-Free Sign Language Translation: An Unbiased Evaluation](/publication/2025-gloss-free-evaluation)  
+**[CVIU 2025]** Gloss-Free Sign Language Translation: An Unbiased Evaluation of Progress in the Field  
 *OM Sincan, JH Low, S Asasi, R Bowden*
 
 [See all publications →](/publications/)
