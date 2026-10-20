@@ -1,0 +1,117 @@
+---
+layout: default
+---
+{%- assign me = site.author -%}
+
+<section class="intro" id="about">
+  <div class="portrait-ring">
+    <img class="portrait" src="{{ me.photo | relative_url }}" alt="Portrait of {{ me.name }}" width="160" height="160">
+  </div>
+  <div>
+    <h1>{{ me.name }}</h1>
+    <p class="role">{{ me.role }} · <a href="{{ me.affiliation_url }}">{{ me.affiliation }}</a></p>
+    <ul class="links">
+      {%- for l in site.links %}
+      <li><a href="{{ l.url }}">{% include icon.html name=l.icon %}<span>{{ l.name }}</span></a></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="bio">
+  {%- capture bio %}{% include bio.md %}{% endcapture %}
+  {{ bio | markdownify }}
+  <ul class="interests" aria-label="Research interests">
+    {%- for topic in site.research_interests %}
+    <li>{{ topic }}</li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section id="news">
+  <h2>News</h2>
+  <ul class="news">
+    {%- for item in site.data.news %}
+    <li><span class="news-date">{{ item.date }}</span><span>{{ item.text }}</span></li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section id="publications">
+  <h2>Publications</h2>
+  {%- capture me_html %}<span class="me">{{ me.citation_name }}</span>{% endcapture %}
+  {%- assign pubs = site.publications | sort: "date" | reverse %}
+  <div class="pubs">
+    {%- for p in pubs %}
+    <article class="pub{% if p.award %} pub-awarded{% endif %}">
+      <div class="pub-venue"><span class="tag tag-{{ p.type }}">{{ p.venue_short }}</span></div>
+      <div class="pub-body">
+        {%- assign title_link = p.paper | default: p.arxiv %}
+        <h3>{% if title_link %}<a href="{{ title_link }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</h3>
+        <p class="authors">{{ p.authors | replace: me.citation_name, me_html }}</p>
+        <p class="venue">
+          {{ p.venue }}
+          {%- if p.presentation %}<span class="badge">{{ p.presentation }}</span>{% endif %}
+          {%- if p.award %}<span class="badge badge-award">{{ p.award }}</span>{% endif %}
+        </p>
+        <p class="pub-links">
+          {%- if p.paper %}<a href="{{ p.paper }}">Paper</a>{% endif %}
+          {%- if p.arxiv %}<a href="{{ p.arxiv }}">arXiv</a>{% endif %}
+          {%- if p.code %}<a href="{{ p.code }}">Code</a>{% endif %}
+          {%- if p.content != "" %}<button type="button" class="toggle" aria-expanded="false" aria-controls="abstract-{{ forloop.index }}">Abstract</button>{% endif %}
+        </p>
+        {%- if p.content != "" %}
+        <div class="abstract" id="abstract-{{ forloop.index }}" hidden>{{ p.content | markdownify }}</div>
+        {%- endif %}
+      </div>
+    </article>
+    {%- endfor %}
+  </div>
+  <p class="more">Full list on <a href="{{ site.links | where: 'icon', 'scholar' | map: 'url' | first }}">Google Scholar</a>.</p>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <ul class="timeline">
+    {%- for e in site.data.cv.education %}
+    <li>
+      <span class="period">{{ e.period }}</span>
+      <div>
+        <p class="tl-title">{{ e.title }}</p>
+        <p class="tl-org">{{ e.org }}{% if e.note %} · {{ e.note }}{% endif %}</p>
+      </div>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section id="experience">
+  <h2>Industry Experience</h2>
+  <ul class="timeline">
+    {%- for e in site.data.cv.experience %}
+    <li>
+      <span class="period">{{ e.period }}</span>
+      <div>
+        <p class="tl-title">{{ e.title }}</p>
+        <p class="tl-org">{{ e.org }}</p>
+        {%- if e.details %}
+        <ul class="tl-details">
+          {%- for d in e.details %}<li>{{ d }}</li>{% endfor %}
+        </ul>
+        {%- endif %}
+      </div>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<script>
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest(".toggle");
+    if (!btn) return;
+    var panel = document.getElementById(btn.getAttribute("aria-controls"));
+    var open = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", String(!open));
+    panel.hidden = open;
+  });
+</script>

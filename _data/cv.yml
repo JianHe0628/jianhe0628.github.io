@@ -1,0 +1,28 @@
+education:
+  - title: PhD, Computer Vision and Deep Learning
+    org: University of Surrey
+    period: 2023 to 2027
+    note: Supervised by Prof. Richard Bowden (expected 2027)
+  - title: MSc, Artificial Intelligence
+    org: University of Surrey
+    period: 2023 to 2024
+  - title: BEng, Electrical and Electronic Engineering
+    org: Coventry University
+    period: 2019 to 2022
+
+experience:
+  - title: Research Scientist Intern
+    org: Canva Research, UK
+    period: 2026 to present
+  - title: Software Automations Engineer
+    org: AMD (EPYC)
+    period: 2023
+    details:
+      - Deployed a MySQL server on an EPYC server platform for automated hardware validation.
+      - Integrated an automation framework across several engineering teams.
+  - title: Artificial Intelligence Intern
+    org: Intel Corporation
+    period: 2022
+    details:
+      - Researched a self-supervised model for C/C++ code anomaly detection.
+      - Investigated further AI approaches to bug detection and wrote up a research report.

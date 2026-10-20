@@ -1,31 +1,64 @@
----
-layout: compress
----
-
-{% include base_path %}
-
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
-  <head>
-    {% include head.html %}
-    {% include head/custom.html %}
-  </head>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- assign page_title = site.title -%}
+  {%- if page.title %}{% assign page_title = page.title | append: " · " | append: site.title %}{% endif %}
+  <title>{{ page_title }}</title>
+  <meta name="description" content="{{ site.description | strip }}">
+  <meta name="theme-color" content="#0b0b12">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
 
-  <body>
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="{{ page_title }}">
+  <meta property="og:description" content="{{ site.description | strip }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ site.author.photo | absolute_url }}">
+  <meta name="twitter:card" content="summary">
 
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
+  <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
-    {{ content }}
-
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": {{ site.author.name | jsonify }},
+    "jobTitle": {{ site.author.role | jsonify }},
+    "affiliation": { "@type": "Organization", "name": {{ site.author.affiliation | jsonify }} },
+    "url": {{ site.url | jsonify }},
+    "image": {{ site.author.photo | absolute_url | jsonify }},
+    "sameAs": [{% for l in site.links %}{% unless l.icon == "mail" %}{% unless forloop.first %}, {% endunless %}{{ l.url | jsonify }}{% endunless %}{% endfor %}]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="container">
+      <a class="brand" href="{{ '/' | relative_url }}"><span class="mark" aria-hidden="true">JH</span><span class="brand-name">{{ site.author.name }}</span></a>
+      <nav aria-label="Sections">
+        <ul>
+          <li><a href="{{ '/#news' | relative_url }}">News</a></li>
+          <li><a href="{{ '/#publications' | relative_url }}">Publications</a></li>
+          <li><a href="{{ '/#education' | relative_url }}">CV</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    {% include scripts.html %}
+  <main class="container">
+    {{ content }}
+  </main>
 
-  </body>
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; {{ site.time | date: "%Y" }} {{ site.author.name }}</span>
+      <span>Last updated {{ site.time | date: "%B %Y" }}</span>
+    </div>
+  </footer>
+</body>
 </html>
